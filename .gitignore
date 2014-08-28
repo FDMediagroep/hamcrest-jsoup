@@ -1,0 +1,21 @@
+# IDE #
+*.iml
+.idea/*
+**/.idea/*
+.externalToolBuilders/
+.settings/
+.classpath
+.project
+.sass-cache/
+
+# MVN #
+target/
+
+# LOCAL #
+environment/local/
+local/
+
+# Mac specific #
+.DS_store
+*/.DS_store
+
