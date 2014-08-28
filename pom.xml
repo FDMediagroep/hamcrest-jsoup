@@ -55,12 +55,12 @@
         <repository>
             <id>info.company.releases</id>
             <name>Company.info releases repository</name>
-            <url>http://nexus.dev.company.info:8080/nexus/content/repositories/releases/</url>
+            <url>http://nexus.dev.company.info:8080/nexus/content/repositories/releases</url>
         </repository>
         <snapshotRepository>
             <id>info.company.snapshots</id>
             <name>Company.info snapshots repository</name>
-            <url>http://nexus.dev.company.info:8080/nexus/content/repositories/snapshots/</url>
+            <url>http://nexus.dev.company.info:8080/nexus/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 
