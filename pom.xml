@@ -79,8 +79,9 @@
     </pluginRepositories>
 
     <scm>
-        <connection>scm:git:ssh://git@git.dev.company.info/data/git/repos/hamcrest-jsoup.git</connection>
-        <developerConnection>scm:git:ssh://git@git.dev.company.info/data/git/repos/hamcrest-jsoup.git</developerConnection>
+        <url>https://github.com/FDMediagroep/hamcrest-jsoup</url>
+        <connection>scm:git:git@git.dev.company.info/data/git/repos/hamcrest-jsoup.git</connection>
+        <developerConnection>scm:git:git@git.dev.company.info/data/git/repos/hamcrest-jsoup.git</developerConnection>
     </scm>
 
 </project>
