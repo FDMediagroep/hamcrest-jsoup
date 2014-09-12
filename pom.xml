@@ -80,8 +80,8 @@
 
     <scm>
         <url>https://github.com/FDMediagroep/hamcrest-jsoup</url>
-        <connection>scm:git:git@git.dev.company.info/data/git/repos/hamcrest-jsoup.git</connection>
-        <developerConnection>scm:git:git@git.dev.company.info/data/git/repos/hamcrest-jsoup.git</developerConnection>
+        <connection>scm:git:git@github.com:FDMediagroep/hamcrest-jsoup.git</connection>
+        <developerConnection>scm:git:git@github.com:FDMediagroep/hamcrest-jsoup.git</developerConnection>
     </scm>
 
 </project>
