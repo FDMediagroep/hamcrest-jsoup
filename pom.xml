@@ -5,7 +5,7 @@
 
     <groupId>nl.fd</groupId>
     <artifactId>hamcrest-jsoup</artifactId>
-    <version>0.1.1</version>
+    <version>0.1.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
