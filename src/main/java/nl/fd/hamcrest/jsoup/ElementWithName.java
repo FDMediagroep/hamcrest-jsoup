@@ -1,6 +1,7 @@
 package nl.fd.hamcrest.jsoup;
 
 import org.hamcrest.Description;
+import org.hamcrest.Factory;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeDiagnosingMatcher;
 import org.jsoup.nodes.Element;
@@ -18,9 +19,9 @@ public class ElementWithName extends TypeSafeDiagnosingMatcher<Element> {
     private final Matcher<? super String> matcher;
 
     /**
-     * @see ElementWithName#withName(org.hamcrest.Matcher)
+     * @see ElementWithName#hasName(org.hamcrest.Matcher)
      */
-    ElementWithName(Matcher<? super String> matcher) {
+    private ElementWithName(Matcher<? super String> matcher) {
         this.matcher = matcher;
     }
 
@@ -31,7 +32,8 @@ public class ElementWithName extends TypeSafeDiagnosingMatcher<Element> {
      * @return the created {@link nl.fd.hamcrest.jsoup.ElementWithName}
      * @see nl.fd.hamcrest.jsoup.ElementWithName
      */
-    public static Matcher<Element> withName(final Matcher<? super String> matcher) {
+    @Factory
+    public static Matcher<Element> hasName(final Matcher<? super String> matcher) {
         return new ElementWithName(matcher);
     }
 
@@ -42,8 +44,9 @@ public class ElementWithName extends TypeSafeDiagnosingMatcher<Element> {
      * @return the created {@link nl.fd.hamcrest.jsoup.ElementWithName}
      * @see nl.fd.hamcrest.jsoup.ElementWithName
      */
-    public static Matcher<Element> withName(final String name) {
-        return withName(equalTo(name));
+    @Factory
+    public static Matcher<Element> hasName(final String name) {
+        return hasName(equalTo(name));
     }
 
     @Override

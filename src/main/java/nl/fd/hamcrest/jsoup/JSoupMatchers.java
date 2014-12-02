@@ -31,7 +31,7 @@ public final class JSoupMatchers {
     public static Matcher<Elements> containingElementsWithOwnTexts(final String... texts) {
         Matcher[] elementWithTextMatchers = new Matcher[texts.length];
         for (int i = 0; i < elementWithTextMatchers.length; i++) {
-            elementWithTextMatchers[i] = ElementWithOwnText.withOwnText(texts[i]);
+            elementWithTextMatchers[i] = ElementWithOwnText.hasOwnText(texts[i]);
         }
         return Matchers.contains(
                 elementWithTextMatchers

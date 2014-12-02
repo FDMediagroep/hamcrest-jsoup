@@ -1,6 +1,7 @@
 package nl.fd.hamcrest.jsoup;
 
 import org.hamcrest.Description;
+import org.hamcrest.Factory;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeDiagnosingMatcher;
 import org.jsoup.nodes.Element;
@@ -14,19 +15,20 @@ import java.util.List;
 public class ElementWithClass extends TypeSafeDiagnosingMatcher<Element> {
     private final String className;
 
-    public ElementWithClass(String className) {
+    private ElementWithClass(String className) {
         this.className = className;
     }
 
     /**
      * Creates a {@link org.hamcrest.Matcher} for a JSoup {@link org.jsoup.nodes.Element} with the specified css class(es). Multiple classes can be
      * separated by whitespace as valid in HTML. E.g. {@code <div class='a b c'></div>} would be matched by
-     * withClass('c b').
+     * hasClass('c b').
      *
      * @param className The css class content to match
      * @return a {@link org.hamcrest.Matcher} for a JSoup {@link org.jsoup.nodes.Element} with the specified css class(es)
      */
-    public static Matcher<Element> withClass(final String className) {
+    @Factory
+    public static Matcher<Element> hasClass(final String className) {
         return new ElementWithClass(className);
     }
 

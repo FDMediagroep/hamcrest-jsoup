@@ -1,20 +1,13 @@
 package nl.fd.hamcrest.jsoup.test;
 
 import nl.fd.hamcrest.jsoup.ElementWithName;
-import nl.fd.hamcrest.jsoup.JSoupMatchers;
-import org.hamcrest.Description;
 import org.hamcrest.Matcher;
-import org.hamcrest.Matchers;
 import org.hamcrest.StringDescription;
 import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.junit.Test;
 
-import java.util.Arrays;
-
 import static org.hamcrest.Matchers.contains;
-import static org.hamcrest.Matchers.endsWith;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 import static org.hamcrest.Matchers.startsWith;
@@ -28,7 +21,7 @@ public class ElementWithNameTest {
     @Test
     public void testWithName_string() {
         // Given
-        Matcher<Element> matcher = ElementWithName.withName("div");
+        Matcher<Element> matcher = ElementWithName.hasName("div");
         Element element = Jsoup.parse("<div><p>Some <a href=\"abc\">linked</a> text</p></div>").body().children().first();
 
         // When
@@ -41,7 +34,7 @@ public class ElementWithNameTest {
     @Test
     public void testWithName_matcher() {
         // Given
-        Matcher<Element> matcher = ElementWithName.withName("p");
+        Matcher<Element> matcher = ElementWithName.hasName("p");
         Element element = Jsoup.parse("<div><p>Some <a href=\"abc\">linked</a> text</p></div>").body().children().first();
 
         // When
@@ -54,7 +47,7 @@ public class ElementWithNameTest {
     @Test
     public void testWithName_describeMismatch_no_mismatch() {
         // Given
-        Matcher<Element> matcher = ElementWithName.withName("div");
+        Matcher<Element> matcher = ElementWithName.hasName("div");
         Element element = Jsoup.parse("<div><p>Some <a href=\"abc\">linked</a> text</p></div>").body().children().first();
         StringDescription description = new StringDescription();
 
@@ -68,7 +61,7 @@ public class ElementWithNameTest {
     @Test
     public void testWithName_describeMismatch_name_mismatch() {
         // Given
-        Matcher<Element> matcher = ElementWithName.withName("p");
+        Matcher<Element> matcher = ElementWithName.hasName("p");
         Element element = Jsoup.parse("<div><p>Some <a href=\"abc\">linked</a> text</p></div>").body().children().first();
         StringDescription description = new StringDescription();
 
@@ -82,7 +75,7 @@ public class ElementWithNameTest {
     @Test
     public void testWithName_describeMismatch_matcher() {
         // Given
-        Matcher<Element> matcher = ElementWithName.withName(startsWith("de"));
+        Matcher<Element> matcher = ElementWithName.hasName(startsWith("de"));
         Element element = Jsoup.parse("<div><p>Some <a href=\"abc\">linked</a> text</p></div>").body().children().first();
         StringDescription description = new StringDescription();
 
@@ -96,7 +89,7 @@ public class ElementWithNameTest {
     @Test
     public void testWithName_describeTo() {
         // Given
-        Matcher<Element> matcher = ElementWithName.withName("p");
+        Matcher<Element> matcher = ElementWithName.hasName("p");
         StringDescription description = new StringDescription();
 
         // When

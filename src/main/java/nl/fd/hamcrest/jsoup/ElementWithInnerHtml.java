@@ -1,6 +1,7 @@
 package nl.fd.hamcrest.jsoup;
 
 import org.hamcrest.Description;
+import org.hamcrest.Factory;
 import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
 import org.hamcrest.TypeSafeDiagnosingMatcher;
@@ -12,7 +13,7 @@ import org.jsoup.nodes.Element;
 public class ElementWithInnerHtml extends TypeSafeDiagnosingMatcher<Element> {
     private final String expectedValue;
 
-    public ElementWithInnerHtml(String expectedValue) {
+    private ElementWithInnerHtml(String expectedValue) {
         this.expectedValue = expectedValue;
     }
 
@@ -21,10 +22,11 @@ public class ElementWithInnerHtml extends TypeSafeDiagnosingMatcher<Element> {
      *
      * @param expectedValue The expected inner HTML
      * @return a {@link org.hamcrest.Matcher} for a JSoup {@link org.jsoup.nodes.Element}
-     * @deprecated Use {@link #withInnerHtml(String)} instead
+     * @deprecated Use {@link #hasInnerHtml(String)} instead
      */
-    public static Matcher<Element> withHtml(final String expectedValue) {
-        return withInnerHtml(expectedValue);
+    @Factory
+    public static Matcher<Element> hasHtml(final String expectedValue) {
+        return hasInnerHtml(expectedValue);
     }
 
     /**
@@ -33,7 +35,8 @@ public class ElementWithInnerHtml extends TypeSafeDiagnosingMatcher<Element> {
      * @param expectedValue The expected inner HTML
      * @return a {@link org.hamcrest.Matcher} for a JSoup {@link org.jsoup.nodes.Element}
      */
-    public static Matcher<Element> withInnerHtml(final String expectedValue) {
+    @Factory
+    public static Matcher<Element> hasInnerHtml(final String expectedValue) {
         return new ElementWithInnerHtml(expectedValue);
     }
 
