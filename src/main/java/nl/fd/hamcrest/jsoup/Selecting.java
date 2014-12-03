@@ -14,9 +14,9 @@ import java.util.List;
 */
 public class Selecting extends TypeSafeDiagnosingMatcher<Element> {
     private final String cssExpression;
-    private final Matcher<Iterable<? super Element>> selectionMatcher;
+    private final Matcher<Iterable<Element>> selectionMatcher;
 
-    private Selecting(String cssExpression, Matcher<Iterable<? super Element>> selectionMatcher) {
+    private Selecting(String cssExpression, Matcher<Iterable<Element>> selectionMatcher) {
         this.cssExpression = cssExpression;
         this.selectionMatcher = selectionMatcher;
     }
@@ -31,7 +31,7 @@ public class Selecting extends TypeSafeDiagnosingMatcher<Element> {
      */
     @Factory
     @SuppressWarnings("unchecked")
-    public static Matcher<Element> selecting(final String cssExpression, final Matcher<Iterable<? super Element>> elementsMatcher) {
+    public static Matcher<Element> selecting(final String cssExpression, final Matcher<Iterable<Element>> elementsMatcher) {
         return new Selecting(cssExpression, elementsMatcher);
     }
 
