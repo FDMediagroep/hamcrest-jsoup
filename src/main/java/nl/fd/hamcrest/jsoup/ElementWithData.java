@@ -8,7 +8,7 @@ import org.jsoup.nodes.Element;
 /**
  * @author Frans Flippo
 */
-class ElementWithData extends TypeSafeDiagnosingMatcher<Element> {
+public class ElementWithData extends TypeSafeDiagnosingMatcher<Element> {
     private final Matcher<String> matcher;
 
     private ElementWithData(Matcher<String> matcher) {
