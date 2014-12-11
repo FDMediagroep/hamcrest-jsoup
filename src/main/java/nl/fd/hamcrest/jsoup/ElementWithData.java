@@ -21,7 +21,7 @@ public class ElementWithData extends TypeSafeDiagnosingMatcher<Element> {
      * @param matcher The Matcher to use for matching the data content
      * @return a {@link org.hamcrest.Matcher} for a JSoup {@link org.jsoup.nodes.Element} with the given {@code text} as its own data content
      */
-    public static Matcher<Element> withData(final Matcher<String> matcher) {
+    public static Matcher<Element> hasData(final Matcher<String> matcher) {
         return new ElementWithData(matcher);
     }
 
