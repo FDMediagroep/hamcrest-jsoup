@@ -5,7 +5,7 @@
 
     <groupId>nl.fd</groupId>
     <artifactId>hamcrest-jsoup</artifactId>
-    <version>0.1.6-SNAPSHOT</version>
+    <version>0.1.6</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -95,7 +95,7 @@
         <url>https://github.com/FDMediagroep/hamcrest-jsoup</url>
         <connection>scm:git:git@github.com:FDMediagroep/hamcrest-jsoup.git</connection>
         <developerConnection>scm:git:git@github.com:FDMediagroep/hamcrest-jsoup.git</developerConnection>
-      <tag>HEAD</tag>
+      <tag>hamcrest-jsoup-0.1.6</tag>
   </scm>
 
 </project>
