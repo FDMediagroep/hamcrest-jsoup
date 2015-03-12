@@ -27,11 +27,17 @@ public class ElementWithData extends TypeSafeDiagnosingMatcher<Element> {
 
     @Override
     protected boolean matchesSafely(Element item, Description mismatchDescription) {
-        return matcher.matches(item.data());
+        if (!matcher.matches(item.data())) {
+            mismatchDescription.appendText(" data ");
+            matcher.describeMismatch(item.data(), mismatchDescription);
+            return false;
+        }
+        return true;
     }
 
     @Override
     public void describeTo(Description description) {
+        description.appendText("element with data ");
         matcher.describeTo(description);
     }
 }
