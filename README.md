@@ -2,7 +2,7 @@ hamcrest-jsoup
 ==============
 The Hamcrest JSoup library provides a set of matchers for JSoup elements to easily assert the contents of those objects.
 
-###To inlude hamcrest-jsoup in your project:
+###How to use hamcrest-jsoup in your project:
 - Clone this project 
 - Build it using maven clean install 
 - Add it to your dependencies using 
@@ -10,11 +10,11 @@ The Hamcrest JSoup library provides a set of matchers for JSoup elements to easi
 <dependency>
 	<groupId>nl.fd</groupId>
       <artifactId>hamcrest-jsoup</artifactId>
-      <version>0.1.6</version>
+      <version>0.1.8-SNAPSHOT</version>
 </dependency>
 ```
 
-###Example implementation 
+###Example Usage
 Here we provide a code sample to give you a rough idea how easy this library is to use.  
 ```
   MvcResult result = mockMvc.perform(get("/users/new")).andReturn();
