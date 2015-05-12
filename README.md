@@ -30,14 +30,21 @@ The result of a mock http get request is parsed into a JSoup document of which a
 
 ###Matchers
 The following matchers are provided: 
-- **ElementWithAttrribute** Matcher with a certain attribute having a specific value 
+- **ElementWithAttrribute** Matcher with a certain attribute having a specific value
+  - hasAttribute
 - **ElementWithClass** Matcher with a certain css class 
+  - hasClass 
 - **ElementWithData** Matcher having the desired matcher 
+  - hasData
 - **ElementWithInnerHtml** Matcher containing (inner) html 
+  - hasHtml
+  - hasInnerHtml
 - **ElementWithName** Matcher having name 
+  - hasName 
 - **ElementWithOwnText** Matcher having text  
+  - hasOwnText 
 - **ElementWithText** Matcher having text matcher 
-- **JSoupMatchers** Provides access to Hamcrest Matchers for JSoup Element and Elements 
+  - hasText
 - **Selecting** Matcher that has a list of child nodes matching the specified cssExpression  
 - **SelectingFirst** Matcher selecting the first element child nodes matching the specified cssExpression
  
