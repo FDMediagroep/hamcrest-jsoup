@@ -2,6 +2,8 @@ hamcrest-jsoup
 ==============
 The Hamcrest JSoup library provides a set of matchers for JSoup elements to easily assert the contents of those objects.
 
+The JavaDoc can ben found at: http://files2.fd.nl/development/hamcrest-jsoup/javadoc/  
+
 ###How to use hamcrest-jsoup in your project:
 - Clone this project 
 - Build it using maven clean install 
