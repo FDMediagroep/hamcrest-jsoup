@@ -17,7 +17,7 @@ The JavaDoc can be found at: http://files2.fd.nl/development/hamcrest-jsoup/java
 ```
 
 ###Example Usage
-Here we provide a code sample to give you a rough idea how easy this library is to use.  
+Here we provide a code sample to give you a rough idea how easy to use this library is.  
 ```
   MvcResult result = mockMvc.perform(get("/users/new")).andReturn();
 
