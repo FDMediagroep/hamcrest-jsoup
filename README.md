@@ -16,6 +16,9 @@ The JavaDoc can be found at: http://files2.fd.nl/development/hamcrest-jsoup/java
 </dependency>
 ```
 
+you can also download the latest release from
+http://files2.fd.nl/development/hamcrest-jsoup/binaries/0.1.7/hamcrest-jsoup-0.1.7.jar
+
 ###Example Usage
 Here we provide a code sample to give you a rough idea how easy to use this library is.  
 ```
