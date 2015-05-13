@@ -1,6 +1,6 @@
 hamcrest-jsoup
 ==============
-The Hamcrest JSoup library provides a set of matchers for JSoup elements to easily assert the contents of those objects.
+The Hamcrest JSoup library provides a set of matchers for JSoup elements to assert the contents of those objects. With this library you can easily unit test the HTML contents in your backend.   
 
 The JavaDoc can be found at: http://files2.fd.nl/development/hamcrest-jsoup/javadoc/  
 
@@ -19,7 +19,7 @@ The JavaDoc can be found at: http://files2.fd.nl/development/hamcrest-jsoup/java
 ###Example Usage
 Here we provide a code sample to give you a rough idea how easy to use this library is.  
 ```
-  String html = "<html><body> <div class=\"content container\"><h1>Dummy User Form</h1> "
+  	String html = "<html><body> <div class=\"content container\"><h1>Dummy User Form</h1> "
                 +" <form role=\"form\" method=\"POST\" action=\"/users/save\"> "
                 +"<div class=\"form-group\">"
                 +"<label for=\"username\">Gebruikersnaam</label>"
@@ -35,6 +35,18 @@ Here we provide a code sample to give you a rough idea how easy to use this libr
                 +"</html>";
 
         Document document = Jsoup.parse(html);
+
+        Elements formElements = document.select("div.content > form");
+        assertThat(formElements.get(0), hasAttribute("action", "/users/save"));
+```
+
+Or when using MockMVC: 
+```
+	MvcResult result = mockMvc.perform(get("/users/new")).andReturn();
+        assertThat(result.getResponse().getStatus(), is(200));
+
+        String content = result.getResponse().getContentAsString();
+        Document document = Jsoup.parse(content);
 
         Elements formElements = document.select("div.content > form");
         assertThat(formElements.get(0), hasAttribute("action", "/users/save"));
