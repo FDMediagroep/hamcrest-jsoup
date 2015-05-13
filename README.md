@@ -19,7 +19,7 @@ The JavaDoc can be found at: http://files2.fd.nl/development/hamcrest-jsoup/java
 ###Example Usage
 Here we provide a code sample to give you a rough idea how easy to use this library is.  
 ```
-  	String html = "<html><body> <div class=\"content container\"><h1>Dummy User Form</h1> "
+	String html = "<html><body> <div class=\"content container\"><h1>Dummy User Form</h1> "
                 +" <form role=\"form\" method=\"POST\" action=\"/users/save\"> "
                 +"<div class=\"form-group\">"
                 +"<label for=\"username\">Gebruikersnaam</label>"
@@ -33,6 +33,7 @@ Here we provide a code sample to give you a rough idea how easy to use this libr
                 +"</div>"
                 +"</body>"
                 +"</html>";
+                
         Document document = Jsoup.parse(html);
         
         Elements formElements = document.select("div.content > form");
