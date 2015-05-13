@@ -1,6 +1,6 @@
 hamcrest-jsoup
 ==============
-The Hamcrest JSoup library provides a set of matchers for JSoup elements to assert the contents of those objects. With this library you can easily unit test the HTML contents in your backend.   
+The Hamcrest JSoup library provides a set of matchers for JSoup elements to assert the contents of those objects. With this library you can easily unit test HTML contents in your backend.   
 
 The JavaDoc can be found at: http://files2.fd.nl/development/hamcrest-jsoup/javadoc/  
 
