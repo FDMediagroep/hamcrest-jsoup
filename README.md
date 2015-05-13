@@ -19,14 +19,14 @@ The JavaDoc can be found at: http://files2.fd.nl/development/hamcrest-jsoup/java
 ###Example Usage
 Here we provide a code sample to give you a rough idea how easy to use this library is.  
 ```
-	String html = "<html><body> <div class=\"content container\"><h1>Dummy User Form</h1> "
-                +" <form role=\"form\" method=\"POST\" action=\"/users/save\"> "
+	String html = "<html><body> <div class=\"content container\"><h1>Some user form</h1> "
+                +"<form role=\"form\" method=\"POST\" action=\"/users/save\"> "
                 +"<div class=\"form-group\">"
-                +"<label for=\"username\">Gebruikersnaam</label>"
+                +"<label for=\"username\">Username</label>"
                 +"<input type=\"text\" class=\"form-control\" id=\"username\" name=\"username\" />"
                 +"</div>"
                 +"<div class=\"form-group\">"
-                +"<label for=\"password\">Wachtwoord</label>"
+                +"<label for=\"password\">Password</label>"
                 +"<input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\" />"
                 +"</div>"
                 +"</form>"
@@ -34,10 +34,10 @@ Here we provide a code sample to give you a rough idea how easy to use this libr
                 +"</body>"
                 +"</html>";
                 
-        Document document = Jsoup.parse(html);
+Document document = Jsoup.parse(html);
         
-        Elements formElements = document.select("div.content > form");
-        assertThat(formElements.get(0), hasAttribute("action", "/users/save"));
+Elements formElements = document.select("div.content > form");
+assertThat(formElements.get(0), hasAttribute("action", "/users/save"));
 ```
 
 Or when using MockMVC: 
