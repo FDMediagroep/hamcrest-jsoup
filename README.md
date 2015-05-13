@@ -33,9 +33,8 @@ Here we provide a code sample to give you a rough idea how easy to use this libr
                 +"</div>"
                 +"</body>"
                 +"</html>";
-
         Document document = Jsoup.parse(html);
-
+        
         Elements formElements = document.select("div.content > form");
         assertThat(formElements.get(0), hasAttribute("action", "/users/save"));
 ```
@@ -43,13 +42,13 @@ Here we provide a code sample to give you a rough idea how easy to use this libr
 Or when using MockMVC: 
 ```
 	MvcResult result = mockMvc.perform(get("/users/new")).andReturn();
-        assertThat(result.getResponse().getStatus(), is(200));
-
-        String content = result.getResponse().getContentAsString();
-        Document document = Jsoup.parse(content);
-
-        Elements formElements = document.select("div.content > form");
-        assertThat(formElements.get(0), hasAttribute("action", "/users/save"));
+	assertThat(result.getResponse().getStatus(), is(200));
+	
+	String content = result.getResponse().getContentAsString();
+	Document document = Jsoup.parse(content);
+	
+	Elements formElements = document.select("div.content > form");
+	assertThat(formElements.get(0), hasAttribute("action", "/users/save"));
 ```
 
 The result of a mock http get request is parsed into a JSoup document of which a specific element is selected using a css selector. The **ElementWithAttrribute** matcher is used to check if the form action has value "/users/save".  
