@@ -23,21 +23,21 @@ Here we provide a code sample to give you a rough idea how easy to use this libr
                 +"<form role=\"form\" method=\"POST\" action=\"/users/save\"> "
                 +"<div class=\"form-group\">"
                 +"<label for=\"username\">Username</label>"
-                +"<input type=\"text\" class=\"form-control\" id=\"username\" name=\"username\" />"
+                +"<input type=\"text\" id=\"username\" name=\"username\" />"
                 +"</div>"
                 +"<div class=\"form-group\">"
                 +"<label for=\"password\">Password</label>"
-                +"<input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\" />"
+                +"<input type=\"password\" id=\"password\" name=\"password\" />"
                 +"</div>"
                 +"</form>"
                 +"</div>"
                 +"</body>"
                 +"</html>";
                 
-Document document = Jsoup.parse(html);
+	Document document = Jsoup.parse(html);
         
-Elements formElements = document.select("div.content > form");
-assertThat(formElements.get(0), hasAttribute("action", "/users/save"));
+	Elements formElements = document.select("div.content > form");
+	assertThat(formElements.get(0), hasAttribute("action", "/users/save"));
 ```
 
 Or when using MockMVC: 
