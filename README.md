@@ -19,13 +19,25 @@ The JavaDoc can be found at: http://files2.fd.nl/development/hamcrest-jsoup/java
 ###Example Usage
 Here we provide a code sample to give you a rough idea how easy to use this library is.  
 ```
-  MvcResult result = mockMvc.perform(get("/users/new")).andReturn();
+  String html = "<html><body> <div class=\"content container\"><h1>Dummy User Form</h1> "
+                +" <form role=\"form\" method=\"POST\" action=\"/users/save\"> "
+                +"<div class=\"form-group\">"
+                +"<label for=\"username\">Gebruikersnaam</label>"
+                +"<input type=\"text\" class=\"form-control\" id=\"username\" name=\"username\" value=\"\" />"
+                +"</div>"
+                +"<div class=\"form-group\">"
+                +"<label for=\"password\">Wachtwoord</label>"
+                +"<input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\" value=\"\" />"
+                +"</div>"
+                +"</form>"
+                +"</div>"
+                +"</body>"
+                +"</html>";
 
-  String content = result.getResponse().getContentAsString();
-  Document document = Jsoup.parse(content);
+        Document document = Jsoup.parse(html);
 
-  Elements formElements = document.select("div.content > form");
-  assertThat(formElements.get(0), hasAttribute("action", "/users/save"));
+        Elements formElements = document.select("div.content > form");
+        assertThat(formElements.get(0), hasAttribute("action", "/users/save"));
 ```
 
 The result of a mock http get request is parsed into a JSoup document of which a specific element is selected using a css selector. The **ElementWithAttrribute** matcher is used to check if the form action has value "/users/save".  
