@@ -16,6 +16,7 @@
         <name>FD Mediagroep</name>
         <url>http://www.fdmediagroep.nl</url>
     </organization>
+
     <licenses>
         <license>
             <name>GNU GENERAL PUBLIC LICENSE, Version 2.0</name>
@@ -23,6 +24,17 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+
+    <developers>
+        <developer>
+            <id>fddev</id>
+            <name>FD Development</name>
+            <email>development@fd.nl</email>
+            <url>http://www.fd.nl</url>
+            <organization>FD Mediagroep</organization>
+            <organizationUrl>http://www.fd.nl</organizationUrl>
+        </developer>
+    </developers>
 
     <properties>
         <java.version>1.7</java.version>
