@@ -19,6 +19,10 @@ The JavaDoc can be found at: http://files2.fd.nl/development/hamcrest-jsoup/java
 you can also download the latest release from
 http://files2.fd.nl/development/hamcrest-jsoup/binaries/0.1.7/hamcrest-jsoup-0.1.7.jar
 
+###Standard Maven dependency
+With a lot of tries we managed to get this into maven central, so you can add a dependency from your project directly!
+http://search.maven.org/#search%7Cga%7C1%7Chamcrest-jsoup
+
 ###Example Usage
 Here we provide a code sample to give you a rough idea how easy to use this library is.  
 ```
