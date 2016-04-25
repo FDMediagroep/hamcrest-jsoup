@@ -24,12 +24,11 @@ public class ElementWithChild extends TypeSafeDiagnosingMatcher<Element> {
     @Override
     protected boolean matchesSafely(Element parent, Description description) {
         Elements elements = parent.select(cssSelector);
-        Element element = elements.first();
-        if (element == null) {
+        if (elements.isEmpty()) {
             description
                     .appendText("expected element to have at least one child matching selector ")
                     .appendValue(cssSelector)
-                    .appendText(" but nothing found");
+                    .appendText(" but nothing found.");
 
             return false;
         }

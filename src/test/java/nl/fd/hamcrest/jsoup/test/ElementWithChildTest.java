@@ -87,7 +87,7 @@ public class ElementWithChildTest {
 
         // Then
         assertEquals(
-                "expected element to have at least one child matching selector \"span\" but nothing found",
+                "expected element to have at least one child matching selector \"span\" but nothing found.",
                 description.toString()
         );
     }
