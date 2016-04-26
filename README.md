@@ -80,5 +80,8 @@ The following matchers are provided:
   - hasText
 - **Selecting** Matcher that has a list of child nodes matching the specified cssExpression  
 - **SelectingFirst** Matcher selecting the first element child nodes matching the specified cssExpression
- 
+
+- **ElementWithChild** Matcher having at least one child with given CSS selector.
+
+- **ElementWithUniqueChild** Matcher having exactly one child with given CSS selector.
 
