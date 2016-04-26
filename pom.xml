@@ -103,14 +103,14 @@
 
     <distributionManagement>
         <repository>
-            <id>info.company.releases</id>
-            <name>Company.info releases repository</name>
-            <url>http://nexus.dev.company.info:8080/nexus/content/repositories/releases</url>
+            <id>fdmg.releases</id>
+            <name>FDMG Nexus releases repository</name>
+            <url>https://nexus.fdmg.org/content/repositories/releases</url>
         </repository>
         <snapshotRepository>
-            <id>info.company.snapshots</id>
-            <name>Company.info snapshots repository</name>
-            <url>http://nexus.dev.company.info:8080/nexus/content/repositories/snapshots</url>
+            <id>fdmg.snapshots</id>
+            <name>FDMG Nexus snapshots repository</name>
+            <url>https://nexus.fdmg.org/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 
@@ -118,7 +118,7 @@
         <url>https://github.com/FDMediagroep/hamcrest-jsoup</url>
         <connection>scm:git:git@github.com:FDMediagroep/hamcrest-jsoup.git</connection>
         <developerConnection>scm:git:git@github.com:FDMediagroep/hamcrest-jsoup.git</developerConnection>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 
 </project>
