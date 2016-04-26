@@ -52,6 +52,12 @@ public class ElementWithUniqueChild extends TypeSafeDiagnosingMatcher<Element> {
         description.appendText(" has child selected by ").appendValue(cssSelector);
     }
 
+    /**
+     * Creates a {@link org.hamcrest.Matcher} for a JSoup {@link org.jsoup.nodes.Element} with exactly one child element that matches {@code expectedValue}.
+     *
+     * @param cssSelector The CSS selector to match the child node on.
+     * @return a {@link org.hamcrest.Matcher} for a JSoup {@link org.jsoup.nodes.Element}
+     */
     @Factory
     public static Matcher<Element> hasUniqueChild(String cssSelector) {
         return new ElementWithUniqueChild(cssSelector);

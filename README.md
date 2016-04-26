@@ -2,7 +2,7 @@ hamcrest-jsoup
 ==============
 The Hamcrest JSoup library provides a set of matchers for JSoup elements to assert the contents of those objects. With this library you can easily unit test HTML contents in your backend.   
 
-The JavaDoc can be found at: http://files2.fd.nl/development/hamcrest-jsoup/javadoc/  
+The JavaDoc can be found at: http://files2.fd.nl/development/hamcrest-jsoup/javadoc/ or via maven central!
 
 ###How to use hamcrest-jsoup in your project:
 - Clone this project 
@@ -12,7 +12,7 @@ The JavaDoc can be found at: http://files2.fd.nl/development/hamcrest-jsoup/java
 <dependency>
 	<groupId>nl.fd</groupId>
       <artifactId>hamcrest-jsoup</artifactId>
-      <version>0.1.8-SNAPSHOT</version>
+      <version>0.1.12-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -63,8 +63,9 @@ The result of a mock http get request is parsed into a JSoup document of which a
 
 ###Matchers
 The following matchers are provided: 
-- **ElementWithAttrribute** Matcher with a certain attribute having a specific value
+- **ElementWithAttribute** Matcher with a certain attribute having a specific value
   - hasAttribute
+  - hasHref
 - **ElementWithClass** Matcher with a certain css class 
   - hasClass 
 - **ElementWithData** Matcher having the desired matcher 
@@ -78,10 +79,10 @@ The following matchers are provided:
   - hasOwnText 
 - **ElementWithText** Matcher having text matcher 
   - hasText
+- **ElementWithChild** Matcher having at least one child with given CSS selector.
+  - hasChild
+- **ElementWithUniqueChild** Matcher having exactly one child with given CSS selector.
+  - hasUniqueChild
 - **Selecting** Matcher that has a list of child nodes matching the specified cssExpression  
 - **SelectingFirst** Matcher selecting the first element child nodes matching the specified cssExpression
-
-- **ElementWithChild** Matcher having at least one child with given CSS selector.
-
-- **ElementWithUniqueChild** Matcher having exactly one child with given CSS selector.
 

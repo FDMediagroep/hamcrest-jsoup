@@ -40,6 +40,12 @@ public class ElementWithChild extends TypeSafeDiagnosingMatcher<Element> {
         description.appendText(" has child selected by ").appendValue(cssSelector);
     }
 
+    /**
+     * Creates a {@link org.hamcrest.Matcher} for a JSoup {@link org.jsoup.nodes.Element} with a child element that matches {@code expectedValue}.
+     *
+     * @param cssSelector The CSS selector to match the child node on.
+     * @return a {@link org.hamcrest.Matcher} for a JSoup {@link org.jsoup.nodes.Element}
+     */
     @Factory
     public static Matcher<Element> hasChild(String cssSelector) {
         return new ElementWithChild(cssSelector);
