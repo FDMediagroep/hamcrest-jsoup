@@ -25,10 +25,7 @@ public class ElementWithChild extends TypeSafeDiagnosingMatcher<Element> {
     protected boolean matchesSafely(Element parent, Description description) {
         Elements elements = parent.select(cssSelector);
         if (elements.isEmpty()) {
-            description
-                    .appendText("expected element to have at least one child matching selector ")
-                    .appendValue(cssSelector)
-                    .appendText(" but nothing found.");
+            description.appendText("no matching child was found");
 
             return false;
         }
@@ -37,7 +34,8 @@ public class ElementWithChild extends TypeSafeDiagnosingMatcher<Element> {
 
     @Override
     public void describeTo(Description description) {
-        description.appendText(" has child selected by ").appendValue(cssSelector);
+        description.appendText("to have at least one child matching selector ")
+                .appendValue(cssSelector);
     }
 
     @Factory

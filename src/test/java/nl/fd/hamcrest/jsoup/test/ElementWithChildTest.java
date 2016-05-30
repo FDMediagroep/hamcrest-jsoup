@@ -1,6 +1,5 @@
 package nl.fd.hamcrest.jsoup.test;
 
-import nl.fd.hamcrest.jsoup.ElementWithChild;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.StringDescription;
@@ -8,6 +7,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
 import org.junit.Test;
 
+import static nl.fd.hamcrest.jsoup.ElementWithChild.hasChild;
 import static org.junit.Assert.*;
 
 /**
@@ -18,7 +18,7 @@ public class ElementWithChildTest {
     @Test
     public void testMatches_match() {
         // Given
-        Matcher<Element> hasChild = ElementWithChild.hasChild(".second-div a[href=testvalue]");
+        Matcher<Element> hasChild = hasChild(".second-div a[href=testvalue]");
         Element body = Jsoup.parse(
                 "<body>" +
                         "<div class=\"first-div\"></div>" +
@@ -40,7 +40,7 @@ public class ElementWithChildTest {
     @Test
     public void testMatches_mismatch() {
         // Given
-        Matcher<Element> hasChild = ElementWithChild.hasChild(".first-div a[href=testvalue]");
+        Matcher<Element> hasChild = hasChild(".first-div a[href=testvalue]");
         Element body = Jsoup.parse(
                 "<body>" +
                         "<div class=\"first-div\"></div>" +
@@ -63,7 +63,7 @@ public class ElementWithChildTest {
     @Test
     public void testDescribeMismatch_noMismatch() throws Exception {
         // Given
-        Matcher<Element> selecting = ElementWithChild.hasChild("p");
+        Matcher<Element> selecting = hasChild("p");
         Element element = Jsoup.parse("<div><p>Some <a href=\"abc\">linked</a> text</p></div>").body().children().first();
         Description description = new StringDescription();
 
@@ -78,17 +78,25 @@ public class ElementWithChildTest {
     @Test
     public void testDescribeMismatch() throws Exception {
         // Given
-        Matcher<Element> selecting = ElementWithChild.hasChild("span");
+        Matcher<Element> selecting = hasChild("span");
         Element element = Jsoup.parse("<div><p>Some <a href=\"abc\">linked</a> text</p></div>").body().children().first();
-        Description description = new StringDescription();
+        Description actualDescription = new StringDescription();
 
         // When
-        selecting.describeMismatch(element, description);
+        selecting.describeMismatch(element, actualDescription);
+
+        Description expectationDescription = new StringDescription();
+        selecting.describeTo(expectationDescription);
 
         // Then
         assertEquals(
-                "expected element to have at least one child matching selector \"span\" but nothing found.",
-                description.toString()
+                "to have at least one child matching selector \"span\"",
+                expectationDescription.toString()
+        );
+
+        assertEquals(
+                "no matching child was found",
+                actualDescription.toString()
         );
     }
 
