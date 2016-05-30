@@ -39,7 +39,9 @@ public class Selecting extends TypeSafeDiagnosingMatcher<Element> {
         Elements elements = item.select(cssExpression);
 
         if (!selectionMatcher.matches(elements)) {
-            mismatchDescription.appendText("has children selected by ").appendValue(cssExpression)
+            mismatchDescription
+                    .appendText("has children selected by ")
+                    .appendValue(cssExpression)
                     .appendText(" do not match ");
             selectionMatcher.describeMismatch(elements, mismatchDescription);
             return false;
