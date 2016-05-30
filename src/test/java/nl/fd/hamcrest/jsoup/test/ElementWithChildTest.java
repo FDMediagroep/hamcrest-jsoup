@@ -81,11 +81,10 @@ public class ElementWithChildTest {
         Matcher<Element> selecting = hasChild("span");
         Element element = Jsoup.parse("<div><p>Some <a href=\"abc\">linked</a> text</p></div>").body().children().first();
         Description actualDescription = new StringDescription();
+        Description expectationDescription = new StringDescription();
 
         // When
         selecting.describeMismatch(element, actualDescription);
-
-        Description expectationDescription = new StringDescription();
         selecting.describeTo(expectationDescription);
 
         // Then
