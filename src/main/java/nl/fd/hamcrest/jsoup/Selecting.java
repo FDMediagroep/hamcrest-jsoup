@@ -7,16 +7,14 @@ import org.hamcrest.TypeSafeDiagnosingMatcher;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import java.util.List;
-
 /**
-*
-*/
+ *
+ */
 public class Selecting extends TypeSafeDiagnosingMatcher<Element> {
     private final String cssExpression;
-    private final Matcher<Iterable<Element>> selectionMatcher;
+    private final Matcher<Iterable<? super Element>> selectionMatcher;
 
-    private Selecting(String cssExpression, Matcher<Iterable<Element>> selectionMatcher) {
+    private Selecting(String cssExpression, Matcher<Iterable<? super Element>> selectionMatcher) {
         this.cssExpression = cssExpression;
         this.selectionMatcher = selectionMatcher;
     }
@@ -25,13 +23,14 @@ public class Selecting extends TypeSafeDiagnosingMatcher<Element> {
      * Creates a {@link org.hamcrest.Matcher} for a JSoup {@link org.jsoup.nodes.Element} that has a list of child nodes
      * matching the specified cssExpression that are matched by the specified elementsMatcher.
      *
-     * @param cssExpression The Jsoup CSS expression used to selected a list of child nodes
+     * @param cssExpression   The Jsoup CSS expression used to selected a list of child nodes
      * @param elementsMatcher the matcher that the selected child nodes will be matched against
+     *
      * @return a {@link org.hamcrest.Matcher} for a JSoup {@link org.jsoup.nodes.Element}
      */
     @Factory
     @SuppressWarnings("unchecked")
-    public static Matcher<Element> selecting(final String cssExpression, final Matcher<Iterable<Element>> elementsMatcher) {
+    public static Matcher<Element> selecting(final String cssExpression, final Matcher<Iterable<? super Element>> elementsMatcher) {
         return new Selecting(cssExpression, elementsMatcher);
     }
 
@@ -40,9 +39,10 @@ public class Selecting extends TypeSafeDiagnosingMatcher<Element> {
         Elements elements = item.select(cssExpression);
 
         if (!selectionMatcher.matches(elements)) {
-            mismatchDescription.appendText("expected element with children selected by ").appendValue(cssExpression).
-                    appendText(" matching ").appendDescriptionOf(selectionMatcher)
-                    .appendText(" but ");
+            mismatchDescription
+                    .appendText("has children selected by ")
+                    .appendValue(cssExpression)
+                    .appendText(" do not match ");
             selectionMatcher.describeMismatch(elements, mismatchDescription);
             return false;
         }
@@ -51,6 +51,6 @@ public class Selecting extends TypeSafeDiagnosingMatcher<Element> {
 
     @Override
     public void describeTo(Description description) {
-        description.appendText(" has children selected by ").appendValue(cssExpression).appendText(" matching ").appendDescriptionOf(selectionMatcher);
+        description.appendText("to have children selected by ").appendValue(cssExpression).appendText(" matching ").appendDescriptionOf(selectionMatcher);
     }
 }
