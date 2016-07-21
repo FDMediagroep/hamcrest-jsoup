@@ -48,7 +48,7 @@
         <repository>
             <id>mvnrepository</id>
             <name>mvnrepository</name>
-            <url>http://www.mvnrepository.com</url>
+            <url>http://www.mvnrepository.com/artifact</url>
         </repository>
         <repository>
             <id>central</id>
