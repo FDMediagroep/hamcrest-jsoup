@@ -46,14 +46,14 @@
 
     <repositories>
         <repository>
-            <id>central</id>
-            <name>Maven Repository Switchboard</name>
-            <url>http://repo1.maven.org/maven2</url>
-        </repository>
-        <repository>
             <id>mvnrepository</id>
             <name>mvnrepository</name>
             <url>http://www.mvnrepository.com</url>
+        </repository>
+        <repository>
+            <id>central</id>
+            <name>Maven Repository Switchboard</name>
+            <url>http://repo1.maven.org/maven2</url>
         </repository>
     </repositories>
 
