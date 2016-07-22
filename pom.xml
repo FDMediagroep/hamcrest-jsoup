@@ -55,14 +55,6 @@
             <name>Maven Repository Switchboard</name>
             <url>http://repo1.maven.org/maven2</url>
         </repository>
-        <repository>
-            <id>fdmg.releases</id>
-            <name>FDMG Nexus</name>
-            <url>https://gitlab.fdmg.org/devops/</url>
-            <releases>
-                <updatePolicy>never</updatePolicy>
-            </releases>
-        </repository>
     </repositories>
 
     <dependencies>
