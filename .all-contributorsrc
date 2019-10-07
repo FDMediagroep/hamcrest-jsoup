@@ -26,6 +26,16 @@
         "doc",
         "maintenance"
       ]
+    },
+    {
+      "login": "Krijger",
+      "name": "Quinten Krijger",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/3886732?v=4",
+      "profile": "https://github.com/Krijger",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
