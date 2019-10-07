@@ -36,6 +36,15 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "mohamnag",
+      "name": "Mohammad Naghavi",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4481421?v=4",
+      "profile": "http://naghavi.me",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
