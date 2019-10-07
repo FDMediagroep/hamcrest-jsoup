@@ -15,6 +15,17 @@
         "doc",
         "maintenance"
       ]
+    },
+    {
+      "login": "jmsnoeij",
+      "name": "Jeroen M Snoeij",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3830004?v=4",
+      "profile": "https://github.com/jmsnoeij",
+      "contributions": [
+        "code",
+        "doc",
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
