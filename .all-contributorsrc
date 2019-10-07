@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "JHannema",
+      "name": "Joram Hannema",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/5299964?v=4",
+      "profile": "https://github.com/JHannema",
+      "contributions": [
+        "code",
+        "doc",
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "hamcrest-jsoup",
+  "projectOwner": "FDMediagroep",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
