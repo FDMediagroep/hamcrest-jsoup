@@ -1,5 +1,5 @@
 hamcrest-jsoup
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 ==============
 The Hamcrest JSoup library provides a set of matchers for JSoup elements to assert the contents of those objects. With this library you can easily unit test HTML contents in your backend.   
 
@@ -97,6 +97,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/JHannema"><img src="https://avatars2.githubusercontent.com/u/5299964?v=4" width="100px;" alt="Joram Hannema"/><br /><sub><b>Joram Hannema</b></sub></a><br /><a href="https://github.com/FDMediagroep/hamcrest-jsoup/commits?author=JHannema" title="Code">💻</a> <a href="https://github.com/FDMediagroep/hamcrest-jsoup/commits?author=JHannema" title="Documentation">📖</a> <a href="#maintenance-JHannema" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://github.com/jmsnoeij"><img src="https://avatars3.githubusercontent.com/u/3830004?v=4" width="100px;" alt="Jeroen M Snoeij"/><br /><sub><b>Jeroen M Snoeij</b></sub></a><br /><a href="https://github.com/FDMediagroep/hamcrest-jsoup/commits?author=jmsnoeij" title="Code">💻</a> <a href="https://github.com/FDMediagroep/hamcrest-jsoup/commits?author=jmsnoeij" title="Documentation">📖</a> <a href="#maintenance-jmsnoeij" title="Maintenance">🚧</a></td>
   </tr>
 </table>
 
